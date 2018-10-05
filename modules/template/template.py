@@ -1,15 +1,13 @@
-import conexion
-import listaparada
-import posicionUsuario
+import dependencie
 
-class bici:
+
+class template:
 
     def __init__(self):
         print('init')
 
 def main():
-        c = bici()
-        #conexion()
+        c = template()
         del c
 
 if __name__ == '__main__':
