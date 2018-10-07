@@ -6,11 +6,18 @@ class bici:
 
     def __init__(self):
         print('init')
+    
+    def obtenlistaParadas(self):
+        return conexion.obtenlistaParadas()
+
+
+
 
 def main():
-        c = bici()
-        #conexion()
-        del c
+    c = bici()
+    print(c.obtenlistaParadas)
+    #conexion()
+    del c
 
 if __name__ == '__main__':
     main()
