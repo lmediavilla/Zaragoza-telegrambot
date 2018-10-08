@@ -10,7 +10,19 @@ def obtenlistaParadas():
     listaParadas = []
     for element in response:
         print(element['StationID'])
-        P = Parada(element['StationID'], element['DisctrictCode'], element['AddressGmapsLongitude'], element['AddressGmapsLatitude'], element['StationAvailableBikes'], element['StationFreeSlot'], element['AddressZipCode'], element['AddressStreet1'], element['AddressNumber'], element['NearbyStationList'], element['StationStatusCode'], element['StationName'])
+        P = Parada( element['StationID'], 
+                    element['DisctrictCode'],
+                    element['AddressGmapsLatitude'],
+                    element['AddressGmapsLongitude'],
+                    element['StationAvailableBikes'], 
+                    element['StationFreeSlot'], 
+                    element['AddressZipCode'], 
+                    element['AddressStreet1'], 
+                    element['AddressNumber'],
+                    element['NearbyStationList'], 
+                    element['StationStatusCode'], 
+                    element['StationName']
+                  )
         listaParadas.append(P)
         del P
     return listaParadas
