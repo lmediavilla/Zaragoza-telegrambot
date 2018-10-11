@@ -5,7 +5,8 @@ import posicionUsuario
 class bici:
 
     def __init__(self):
-        print('init')
+        #print('init')
+        pass
     
     def obtenlistaParadas(self):
         return conexion.obtenlistaParadas()
@@ -15,7 +16,7 @@ class bici:
 
 def main():
     c = bici()
-    print(c.obtenlistaParadas)
+    print(c.obtenlistaParadas())
     #conexion()
     del c
 

@@ -36,10 +36,22 @@ def obtenlistaParadas():
                     element['StationName']
                   )
         listaParadas.append(P)
-        df.loc[len(df)]=[P.StationID,P.DisctrictCode,P.AddressGmapsLatitude,P.AddressGmapsLongitude,P.StationAvailableBikes,P.StationFreeSlot,P.AddressZipCode,P.AddressStreet1,P.AddressNumber,P.NearbyStationList,P.StationStatusCode,P.StationName]
-        #esto es un poco cutre, escribir el fichero n veces
-        df.to_csv('paradas.csv',sep=',',encoding='utf-8',index=False)   
+        df.loc[len(df)]=[
+                            P.StationID,                \
+                            P.DisctrictCode,            \
+                            P.AddressGmapsLatitude,     \
+                            P.AddressGmapsLongitude,    \
+                            P.StationAvailableBikes,    \
+                            P.StationFreeSlot,          \
+                            P.AddressZipCode,           \
+                            P.AddressStreet1,           \
+                            P.AddressNumber,            \
+                            P.NearbyStationList,        \
+                            P.StationStatusCode,        \
+                            P.StationName               \
+                        ]
         del P
+    df.to_csv('paradas.csv',sep=',',encoding='utf-8',index=False)  
     return listaParadas
 
 

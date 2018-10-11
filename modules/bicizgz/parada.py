@@ -19,8 +19,8 @@ class Parada:
         #constructor del objeto
         self.StationID = StationID
         self.DisctrictCode = DisctrictCode
-        self.AddressGmapsLatitude = AddressGmapsLatitude
-        self.AddressGmapsLongitude = AddressGmapsLongitude
+        self.AddressGmapsLatitude = str(round(float(AddressGmapsLatitude), 7))
+        self.AddressGmapsLongitude =  str(round(float(AddressGmapsLongitude), 7))
         self.StationAvailableBikes = StationAvailableBikes
         self.StationFreeSlot = StationFreeSlot
         self.AddressZipCode = AddressZipCode
