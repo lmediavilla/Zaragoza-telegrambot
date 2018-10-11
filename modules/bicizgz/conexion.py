@@ -13,7 +13,13 @@ def cleanCsv():
         print(f'borrado {i}')
     df.to_csv('paradas.csv',sep=',',encoding='utf-8',index=False) 
     
+def csvToList():
+    df = pd.read_csv('paradas.csv', sep=',',header=0)
+    return  df.values.tolist()
 
+def listToCsv(lista):
+    df = pd.DataFrame(lista, columns=['StationID',"DisctrictCode","AddressGmapsLatitude","AddressGmapsLongitude","StationAvailableBikes","StationFreeSlot","AddressZipCode","AddressStreet1","AddressNumber","NearbyStationList","StationStatusCode","StationName"])
+    df.to_csv('paradas2.csv',sep=',',encoding='utf-8',index=False) 
 def obtenlistaParadas():
     #devolvemos json en bruto
     URL = 'https://www.bizizaragoza.com/sites/default/files/stations/station_list.json'
@@ -56,6 +62,7 @@ def obtenlistaParadas():
 
 
 def main():
-    print(obtenlistaParadas())
+    #print(obtenlistaParadas())
+    listToCsv(csvToList())
 if __name__ == '__main__':
     main()
