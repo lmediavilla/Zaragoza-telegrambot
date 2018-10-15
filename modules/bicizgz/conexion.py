@@ -1,16 +1,16 @@
 import requests
 from json import loads
-from parada import Parada
+from modules.bicizgz.parada import Parada
 import pandas as pd
+import logging
 
 def cleanCsv():
     #limpiar Csv una vez redescubro las paradas
     df = pd.read_csv('paradas.csv', sep=',',header=0)
-    #print(f'len(df) -> {len(df)}')
     i = 0
     for i in range(0,len(df)):
         df = df[df['StationID'] == i]
-        print(f'borrado {i}')
+        logging.info(f'borrado {i}')
     df.to_csv('paradas.csv',sep=',',encoding='utf-8',index=False) 
     
 def csvToList():
