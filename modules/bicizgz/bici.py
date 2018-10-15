@@ -33,11 +33,11 @@ class bici:
 
            filtro = listaparadas[listaparadas['StationID'] == fila['ParadaID']]
            listaresult.append([
-                                str(filtro['StationID']),
-                                str(filtro['AddressGmapsLatitude']),
-                                str(filtro['AddressGmapsLongitude']),
-                                str(filtro['StationAvailableBikes']) + " " + \
-                                str(filtro['StationFreeSlot']) + " {" + str(filtro['AddressStreet1']) +"}"
+                                str(filtro['StationID'].values),
+                                str(filtro['AddressGmapsLatitude'].values),
+                                str(filtro['AddressGmapsLongitude'].values),
+                                str(filtro['StationAvailableBikes'].values) + " " + \
+                                str(filtro['StationFreeSlot'].values) + " {" + str(filtro['AddressStreet1'].values) +"}"
                               ])
 
         return listaresult
